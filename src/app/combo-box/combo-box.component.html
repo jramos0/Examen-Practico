@@ -1,0 +1,142 @@
+<div class="">
+
+</div>  <div class="contenedor">
+        <label>Nombre:</label>
+            <input type="text" [(ngModel)]="nombre">
+            
+            <label>DUI:</label>
+            <input type="text" [(ngModel)]="dui">
+            <div id="prec">
+                <h1>Registro de Productos</h1>
+<table class="reg">
+
+  <tr>
+
+    <th>Codigo del Producto</th>
+
+    <th>Descripción del Porducto</th>
+
+    <th>Precio</th>
+
+  </tr>
+
+  <tr>
+
+    <td>001C</td>
+
+    <td>Galon de Leche</td>
+
+    <td>$2</td>
+
+  </tr>
+
+  <tr>
+
+    <td>002d</td>
+
+    <td>Kilo de Azucar</td>
+
+    <td>$1.50</td>
+
+  </tr>
+
+  <tr>
+
+    <td>003C</td>
+
+    <td>Bote de Café</td>
+
+    <td>$1.6</td>
+
+  </tr>
+
+  <tr>
+
+    <td>004C</td>
+
+    <td>Libra de frijoles</td>
+
+    <td>$1</td>
+
+  </tr>
+
+  <tr>
+
+    <td>005C</td>
+
+    <td>Bolsa de Cereal</td>
+
+    <td>$1.30</td>
+
+  </tr>
+
+</table>
+            </div>
+                
+                <label>¿Llevara leche?</label>
+                            <select [(ngModel)]="opclech" (change)="capturar()">
+                            <option value="Selecciona">Selecciona</option>   
+                    <option *ngFor="let u of leche" value="{{u}}" >
+                    {{u}}
+                    </option>
+                    </select> 
+                    <label> Cantidad:</label>       
+                    <input type="text" id="input" [(ngModel)]="vallec" >
+                  <tr>
+                
+                    <label>¿Llevaras azucar?</label>
+                                <select [(ngModel)]="opcazu" (change)="capturar()">
+                                <option value="Selecciona">Selecciona</option>   
+                        <option *ngFor="let u of azucar" value="{{u}}" >
+                        {{u}}
+                        </option>
+                        </select> 
+                
+                        <label> Cantidad:</label>       
+                        <input id="idBoton"type="text" [(ngModel)]="valazu">
+                         
+                        <tr>
+                <label>¿Llevaras café?</label>
+                            <select [(ngModel)]="opccaf" (change)="capturar()">
+                            <option value="Selecciona">Selecciona</option>   
+                    <option *ngFor="let u of cafe" value="{{u}}" >
+                    {{u}}
+                    </option>
+                    </select>
+             
+                    <label> Cantidad:</label>       
+                    <input type="text" [(ngModel)]="valcaf">
+                    <tr>
+                
+               
+                    <label>¿Llevaras frijoles?</label>
+                                <select [(ngModel)]="opcfri" (change)="capturar()">
+                                <option value="Selecciona">Selecciona</option>   
+                        <option *ngFor="let u of frijoles" value="{{u}}" >
+                        {{u}}
+                        </option>
+                        </select> 
+                    
+                        <label> Cantidad:</label>       
+                        <input type="text" [(ngModel)]="valfri">
+                        <tr>
+                    
+                        <label>¿Llevaras cereal?</label>
+                                    <select [(ngModel)]="opccer" (change)="capturar()">
+                                    <option value="Selecciona">Selecciona</option>   
+                            <option *ngFor="let u of cereal" value="{{u}}" >
+                            {{u}}
+                            </option>
+                            </select>
+                       
+                            <label> Cantidad:</label>       
+                            <input type="text" [(ngModel)]="valcer">
+                            <tr>
+                              
+
+            </div>           
+
+            <button class="button" (click)="ingresar()">Ingresar</button> 
+            <tr>       
+            <label [hidden]="contador == 0">{{ nombre }} de {{dui}} usted le sale en total:
+    {{total}}</label>
